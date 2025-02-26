@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
 
 import Layout from "./components/Layout/Layout.jsx";
-import Home, { loader as loaderProducts } from "./components/Home";
+import Home from "./components/Home";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 
@@ -13,7 +13,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: loaderProducts,
+        // loader: loaderProducts,
       },
       {
         path: "/login",

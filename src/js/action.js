@@ -1,0 +1,7 @@
+export const action= {
+    SET_ITEMS: "SET_ITEMS",
+    SET_ISLOADING: "SET_ISLOADING",
+    SET_ISERROR: "SET_ISERROR",
+    SET_TOTAL: "SET_TOTAL",
+    REMOVE_TOTAL: "REMOVE_TOTAL"
+}
