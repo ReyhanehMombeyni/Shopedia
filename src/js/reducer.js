@@ -15,8 +15,17 @@ export const reducer= (state, action) => {
       return {...state, isLoading: action.payload}
     case "SET_TOTAL":
       let count=0;
-      state.items.map(item => count+=Number(item.attributes.price))
+      state.items.map(item => count+=(Number(item.attributes.price)))
       return {...state, total: count}
+    case "CLEAR_ITEMS":
+      return {...state, items: null, total: 0}
+    case "INCREASE":
+      return {...state, total: state.total + action.payload}
+    case "DECREASE":
+      return {...state, total: state.total - action.payload}
+    case "DELETE_ITEM":
+      const {totalPriceItem, newItems}= action.payload;
+      return {...state, total: state.total - totalPriceItem, items: newItems}
     default:
       break;
   }
