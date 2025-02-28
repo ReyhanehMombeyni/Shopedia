@@ -7,7 +7,11 @@ import { action } from "../js/action";
 const Home = () => {
   
   const {state, dispatch}= useContext(AppContext);
-  const {items, isLoading, total}= state;
+  const {items, isLoading, isError, total}= state;
+
+  if(isError) {
+    return <h1 className="text-red-600 text-4xl font-bold min-h-100 flex items-center justify-center">There was an error...</h1>
+  }
 
   return (
     <>
